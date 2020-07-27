@@ -8,7 +8,7 @@ export function useEventListener <K extends keyof WindowEventMap>(
     event: K,
     callback: (this: Window, event: BeforeUnloadEvent) => void,
     options: boolean | AddEventListenerOptions = undefined
-) {
+): RemoveEventListenerCallback {
     self.addEventListener(event, callback, options);
 
     return () => {
@@ -16,3 +16,6 @@ export function useEventListener <K extends keyof WindowEventMap>(
         return callback;
     }
 }
+
+
+export type RemoveEventListenerCallback = (this: Window, event: BeforeUnloadEvent) => void

@@ -1,11 +1,11 @@
-import { useEventListener } from "./utils/useEvent";
+import { useEventListener, RemoveEventListenerCallback } from "./utils/useEvent";
 
 /**
  * useRefreshLock
  *
  * Ensure that user allow the browser to refresh
  */
-export function useRefreshLock(callback: () => void = () => {}, message: string = '') {
+export function useRefreshLock(callback: () => void = () => {}, message: string = ''): RemoveEventListenerCallback {
     const release = useEventListener('beforeunload', function (event) {
         event.preventDefault();
 
