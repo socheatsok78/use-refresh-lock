@@ -5,7 +5,7 @@ import { useEventListener } from "./utils/useEvent";
  *
  * Ensure that user allow the browser to refresh
  */
-export function useRefreshLock(callback: () => void, message: string = '') {
+export function useRefreshLock(callback: () => void = () => {}, message: string = '') {
     const release = useEventListener('beforeunload', function (event) {
         event.preventDefault();
 
@@ -15,5 +15,5 @@ export function useRefreshLock(callback: () => void, message: string = '') {
         return event.returnValue;
     }, { capture: true })
 
-    return [ release ];
+    return release;
 }
