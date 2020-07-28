@@ -1,6 +1,10 @@
 # use-refresh-lock
 
-useRefreshLock - Ensure that user allow the browser to refresh
+Ensure that user allow the browser to refresh
+
+[![npm-version](https://img.shields.io/npm/v/use-refresh-lock)][npm-url]
+[![npm-minzip](https://img.shields.io/bundlephobia/minzip/use-refresh-lock)][npm-url]
+[![npm-download](https://img.shields.io/npm/dm/use-refresh-lock)][npm-url]
 
 ### Installation
 
@@ -40,3 +44,6 @@ const release = useRefreshLock(function() {
 
 ## License
 License under [MIT](LICENSE)
+
+<!-- Variables -->
+[npm-url]: https://www.npmjs.com/package/use-refresh-lock
